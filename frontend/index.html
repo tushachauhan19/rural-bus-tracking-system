@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RuralRide | Bus Tracking</title>
+    <meta name="description" content="Find rural bus routes and bus service information with RuralRide.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a class="brand" href="#">
+            <span class="brand-icon">R</span>
+            <span>Rural<span class="brand-accent">Ride</span></span>
+        </a>
+        <span class="nav-label">Passenger Portal</span>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="eyebrow">YOUR JOURNEY, MADE EASIER</span>
+                <h1>Every journey<br>starts <span>here.</span></h1>
+                <p>Find bus services, explore routes and plan your next journey with confidence.</p>
+                <a class="hero-link" href="#search">Find your bus <span>↓</span></a>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <div class="sun"></div>
+                <div class="mountain mountain-back"></div>
+                <div class="mountain mountain-front"></div>
+                <div class="road"></div>
+                <div class="bus-illustration">
+                    <div class="bus-window"></div>
+                    <div class="bus-window second"></div>
+                    <div class="bus-door"></div>
+                    <div class="wheel wheel-one"></div>
+                    <div class="wheel wheel-two"></div>
+                </div>
+                <span class="art-label">Connecting communities</span>
+            </div>
+        </section>
+
+        <section class="search-section" id="search">
+            <div class="section-heading">
+                <span class="eyebrow">PLAN YOUR TRIP</span>
+                <h2>Where are you going?</h2>
+                <p>Search our currently listed bus services.</p>
+            </div>
+
+            <form id="search-form" class="search-card">
+                <label>
+                    <span>FROM</span>
+                    <input id="from" type="text" placeholder="e.g. Tehri" autocomplete="off">
+                </label>
+                <div class="route-arrow" aria-hidden="true">→</div>
+                <label>
+                    <span>TO</span>
+                    <input id="to" type="text" placeholder="e.g. Rishikesh" autocomplete="off">
+                </label>
+                <button type="submit">Search buses <span>→</span></button>
+            </form>
+
+            <p class="search-note">Search matches the route information saved in our system.</p>
+        </section>
+
+        <section class="results-section" id="results">
+            <div class="results-heading">
+                <div>
+                    <span class="eyebrow">BUS DIRECTORY</span>
+                    <h2>Available services</h2>
+                </div>
+                <button id="show-all" class="text-button" type="button">Show all buses ↗</button>
+            </div>
+            <div id="bus-list" class="bus-grid">
+                <div class="empty-state">Loading bus services...</div>
+            </div>
+            <p id="result-message" class="result-message" role="status"></p>
+        </section>
+
+        <section class="tracking-banner">
+            <div class="tracking-symbol">⌖</div>
+            <div>
+                <h3>Know where your bus is going.</h3>
+                <p>Live GPS tracking is planned for a future version of RuralRide.</p>
+            </div>
+            <span class="coming-soon">COMING SOON</span>
+        </section>
+    </main>
+
+    <footer>
+        <a class="brand footer-brand" href="#">
+            <span class="brand-icon">R</span>
+            <span>Rural<span class="brand-accent">Ride</span></span>
+        </a>
+        <p>Better connections for rural communities.</p>
+        <span>RuralRide Passenger Portal</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

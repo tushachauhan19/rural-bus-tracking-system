@@ -1,0 +1,45 @@
+
+
+from pathlib import Path
+
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+
+from backend.database.database import initialize_database
+from backend.routes.bus_routes import router as bus_router
+
+app = FastAPI(
+    title="Rural Bus Tracking System",
+    description="Bus tracking system for rural and Tier-3 cities",
+    version="1.0.0"
+)
+
+
+@app.on_event("startup")
+def startup_event():
+    initialize_database()
+
+
+app.include_router(bus_router)
+
+
+@app.get("/")
+def home():
+    return {
+        "message": "Rural Bus Tracking System API is running!",
+        "status": "success"
+    }
+
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy"}
+
+
+frontend_path = Path(__file__).resolve().parent.parent / "frontend"
+
+app.mount(
+    "/passenger",
+    StaticFiles(directory=str(frontend_path), html=True),
+    name="passenger"
+)
